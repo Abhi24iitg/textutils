@@ -71,7 +71,9 @@ export default function Textform(props) {
   const noofwords = () => {
     if (text === "") return 0;
     else {
-      return text.split(" ").length;
+      return text.split(" ").filter((element) => {
+        return element.length !== 0;
+      }).length;
     }
   };
   const [text, setText] = useState("");
